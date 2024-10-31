@@ -5,13 +5,16 @@
 /* This layer is great for typography styles, background colors, or default spacing on root elements. */
 @layer base {
   body {
-    @apply bg-white text-green font-satoshi;
+    @apply bg-white text-green font-satoshi overflow-x-hidden;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-black text-4xl uppercase leading-tight;
   }
   h2{
     @apply text-3xl font-bold;
+  }
+  h6{
+    @apply text-lg font-bold;
   }
 }
 
