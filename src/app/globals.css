@@ -2,20 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* This layer is great for typography styles, background colors, or default spacing on root elements. */
+@layer base {
+  body {
+    @apply bg-white text-green font-satoshi;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-black text-4xl uppercase leading-tight;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* This layer is great for utility classes that don't fit into the other layers. */
+@layer utilities{
+  .responsive{
+    @apply max-w-screen-xl mx-auto lg:px-40 md:px-20 px-4;
+  }
+}
+
+/* This layer is great for component-specific styles. */
+@layer components {
+
 }

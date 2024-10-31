@@ -1,16 +1,44 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const satoshi = localFont({
+  src: [
+    {
+      path: "./fonts/Satoshi-Black.otf",
+      weight: "900",
+      style: "black",
+    },
+    {
+      path: "./fonts/Satoshi-Bold.otf",
+      weight: "700",
+      style: "bold",
+    },
+    {
+      path: "./fonts/Satoshi-Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./fonts/Satoshi-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Satoshi-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Satoshi-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+  ],
+  variable: "--font-satoshi",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,10 +53,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={satoshi.variable}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
