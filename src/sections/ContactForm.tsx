@@ -19,7 +19,7 @@ const ContactForm = () => {
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const { name, email, message } = formData;
-    const whatsappNumber = "+254712137749"; // Your WhatsApp number
+    const whatsappNumber = "+254704687138"; // Your WhatsApp number
     const url = `https://wa.me/${whatsappNumber}?text=Name:%20${encodeURIComponent(
       name
     )}%0AEmail:%20${encodeURIComponent(
