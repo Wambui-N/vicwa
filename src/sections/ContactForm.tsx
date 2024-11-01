@@ -10,13 +10,14 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e: { target: { name: any; value: any } }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const { name, email, message } = formData;
     const whatsappNumber = "+254704687138"; // Your WhatsApp number
@@ -25,7 +26,12 @@ const ContactForm = () => {
     )}%0AEmail:%20${encodeURIComponent(
       email
     )}%0AMessage:%20${encodeURIComponent(message)}`;
+    
+    // Open the WhatsApp URL in a new tab
     window.open(url, "_blank");
+    
+    // Set the form as submitted
+    setIsSubmitted(true);
   };
 
   return (
@@ -48,6 +54,7 @@ const ContactForm = () => {
             name="email"
             placeholder="Email"
             onChange={handleChange}
+            required
           />
           <textarea
             className="input"
@@ -57,11 +64,18 @@ const ContactForm = () => {
             required
           ></textarea>
           <div className="inline-flex justify-center">
-            <Button variant="secondary" type="submit">
-              Send to WhatsApp
-            </Button>
+            {!isSubmitted && (
+              <Button variant="secondary" type="submit">
+                Send to WhatsApp
+              </Button>
+            )}
           </div>
         </form>
+        {isSubmitted && (
+          <p className="text-center text-green-600 mt-4">
+            Message sent!
+          </p>
+        )}
       </div>
     </div>
   );
