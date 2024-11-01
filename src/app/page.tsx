@@ -1,5 +1,6 @@
 import About from "@/sections/About";
 import Hero from "@/sections/Hero";
+import Services from "@/sections/Services";
 import { WhyUs } from "@/sections/WhyUs";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <About />
       <WhyUs />
+      <Services />
     </main>
   )
 }

@@ -19,7 +19,7 @@ const WhyUsPoint = ({
   return (
     <div className={`flex ${style} gap-4 h-[70vh] overflow-hidden`}>
       <Image
-        className="basis-1/2 w-full h-full object-center object-fill rounded-lg"
+        className="basis-1/2 w-full h-full object-center object-cover rounded-lg"
         src={image}
         alt="Experience"
         width={300}
