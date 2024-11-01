@@ -31,7 +31,7 @@ const approachData = [
 
 const Approach = () => {
   return (
-    <div className="responsive">
+    <div id="approach" className="responsive">
       <SectionTitle title="Our Approach" />
       <div className="section-padding">
         <p>

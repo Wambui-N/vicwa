@@ -29,7 +29,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="responsive">
+    <div id="contact" className="responsive">
       <SectionTitle title="Contact Us" />
       <div className="section-padding">
         <p>Let us know how we can assist you.</p>

@@ -9,12 +9,12 @@ const footerLinks = [
   {
     title: "Company",
     links: [
-      { label: "About Us", href: "#" },
-      { label: "Why Choose Us", href: "#" }, // Fixed typo from "lable" to "label"
-      { label: "Our Services", href: "#" },
-      { label: "Our Approach", href: "#" }, // Fixed typo from "Aproach" to "Approach"
-      { label: "FAQs", href: "#" },
-      { label: "Contact", href: "#" },
+      { label: "About Us", href: "#about" },
+      { label: "Why Choose Us", href: "#why-choose-us" }, // Fixed typo from "lable" to "label"
+      { label: "Our Services", href: "#services" },
+      { label: "Our Approach", href: "#approach" }, // Fixed typo from "Aproach" to "Approach"
+      { label: "FAQs", href: "#faqs" },
+      { label: "Contact", href: "#contact" },
     ],
   },
 ];
@@ -48,6 +48,16 @@ const Footer = () => {
             <div key={section.title}>
               <h6 className="font-semibold text-lg mb-4">{section.title}</h6>
               <ul className="space-y-3">
+                <li>
+                  <div
+                    className="cursor-pointer font-semibold"
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
+                  >
+                    Back to the top
+                  </div>
+                </li>
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <Link

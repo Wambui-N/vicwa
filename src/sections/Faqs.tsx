@@ -42,7 +42,7 @@ const accordionItems = [
 
 const Faqs = () => {
   return (
-    <div className="responsive">
+    <div id="faqs" className="responsive">
       <SectionTitle title="FAQs" />
       <div className="section-padding">
         <AccordionComponent items={accordionItems} allowMultiple={false} />

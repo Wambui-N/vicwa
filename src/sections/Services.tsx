@@ -64,7 +64,7 @@ const Services = () => {
   }, [isInViewArray, currentImageIndex]);
 
   return (
-    <div className="responsive">
+    <div id="services" className="responsive">
       <SectionTitle title="Our Services" />
       <div className="section-padding">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">

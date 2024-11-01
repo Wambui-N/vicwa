@@ -1,4 +1,3 @@
-// components/Button.tsx
 import React from 'react';
 
 interface ButtonProps {
@@ -9,6 +8,7 @@ interface ButtonProps {
   size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
   id?: string;
+  href?: string; // Add href prop
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -19,13 +19,14 @@ const Button: React.FC<ButtonProps> = ({
   size = 'small',
   disabled = false,
   id = '#',
+  href, // Destructure href prop
 }) => {
   // Define base classes for the button
   const baseClasses = `inline-flex items-center justify-center font-semibold rounded-lg uppercase text-sm transition-all duration-500 focus:outline-none`;
-  
+
   // Variant styles
   const variantClasses = {
-    primary: 'bg-orange text-white hover:bg-white hover:text-orange',
+    primary: 'bg-orange text-white hover:bg-orange/0 hover:text-orange',
     secondary: 'bg-green text-white',
     danger: 'bg-red-600 text-white hover:bg-red-700',
   }[variant];
@@ -39,6 +40,22 @@ const Button: React.FC<ButtonProps> = ({
 
   // Disabled style
   const disabledClasses = disabled ? 'opacity-50 cursor-not-allowed' : '';
+
+  // Render as a button or link based on the presence of href
+  if (href) {
+    return (
+      <a
+        href={href}
+        onClick={onClick}
+        className={`${baseClasses} ${variantClasses} ${sizeClasses} ${disabledClasses}`}
+        id={id}
+        role="button" // Ensure it's recognized as a button
+        aria-disabled={disabled} // Indicate if the link is disabled
+      >
+        {children}
+      </a>
+    );
+  }
 
   return (
     <button

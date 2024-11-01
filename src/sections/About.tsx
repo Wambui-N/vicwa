@@ -4,7 +4,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="responsive py-8">
+    <div id="about" className="responsive py-8">
       <SectionTitle title="Leading the Way in Construction and Plumbing Since 2019" />
       <div className="section-padding flex flex-col gap-8">
         <AboutSection

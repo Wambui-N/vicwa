@@ -30,7 +30,7 @@ const whyUsPoints = [
 
 export const WhyUs = () => {
   return (
-    <div className="responsive py-8">
+    <div id="why-choose-us" className="responsive py-8">
       <SectionTitle title="Why Choose Us?" />
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
         {whyUsPoints.map((points, index) => (

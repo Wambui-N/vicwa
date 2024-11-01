@@ -17,7 +17,7 @@ const Hero = () => {
               water and waste systems.
             </p>
             <div className="py-4">
-              <Button id="services" variant="primary">
+              <Button href="#services" variant="primary">
                 Explore our services
               </Button>
             </div>

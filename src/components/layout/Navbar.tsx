@@ -11,9 +11,9 @@ import Button from "../Button";
 // Define menu links
 const menuLinks = [
   { path: "/", label: "Home" },
-  { path: "#", label: "Projects" },
-  { path: "#", label: "About" },
-  { path: "#", label: "Services" },
+  // { path: "#", label: "Projects" },
+  { path: "#about", label: "About" },
+  { path: "#services", label: "Services" },
 ];
 
 // Logo Component
@@ -87,7 +87,7 @@ const MobileMenu = ({ isOpen, toggleMenu }: { isOpen: boolean; toggleMenu: () =>
           animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 20 }}
           transition={{ delay: menuLinks.length * 0.1 }}
         >
-          <Button variant="secondary" onClick={toggleMenu}>
+          <Button id="#contact" variant="secondary" onClick={toggleMenu}>
             Get in touch
           </Button>
         </motion.div>
@@ -148,7 +148,7 @@ const Navbar = () => {
           
           <div className="hidden lg:flex items-center gap-8">
             <Menu />
-            <Button variant="primary">Get in touch</Button>
+            <Button href="#contact" variant="primary">Get in touch</Button>
           </div>
 
           <div className="lg:hidden">
