@@ -26,6 +26,9 @@
   .section-padding{
     @apply lg:px-24 px-4 py-6;
   }
+  .input{
+    @apply border border-green/40 text-green rounded-lg py-2 px-4 ring-0 focus:ring-0 focus:border-green ring-offset-0  bg-white;
+  }
 }
 
 /* This layer is great for component-specific styles. */
