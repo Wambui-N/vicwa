@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+import SectionTitle from "@/components/SectionTitle";
 
 const services = [
   {
@@ -64,10 +65,11 @@ const Services = () => {
 
   return (
     <div className="responsive">
+      <SectionTitle title="Our Services" />
       <div className="section-padding">
-        <div className="flex flex-row gap-12">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           {/* Services List */}
-          <div className="basis-1/2 flex flex-col">
+          <div className="w-full md:basis-1/2 flex flex-col">
             {services.map((service, index) => (
               <motion.div
                 ref={serviceRefs.current[index]}
@@ -75,23 +77,23 @@ const Services = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isInViewArray[index] ? 1 : 0, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="py-12 flex flex-col justify-between gap-12"
+                className="py-8 md:py-12 flex flex-col justify-between gap-6 md:gap-12"
               >
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-4 md:gap-6">
                   <div className="w-8 h-8 rounded-full bg-green flex items-center justify-center text-sm text-white">
                     {index + 1}
                   </div>
-                  <h3 className="text-2xl font-semibold">{service.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-semibold">{service.title}</h3>
                 </div>
-                <p>{service.description}</p>
+                <p className="text-sm md:text-base">{service.description}</p>
               </motion.div>
             ))}
           </div>
 
-          {/* Sticky Image */}
+          {/* Sticky Image - Hidden on Mobile */}
           <div
             ref={imageContainerRef}
-            className="basis-1/2 sticky right-0 top-[100px] h-full py-12"
+            className="hidden md:block md:basis-1/2 sticky right-0 top-[100px] h-full py-12"
           >
             <AnimatePresence mode="wait">
               <motion.div

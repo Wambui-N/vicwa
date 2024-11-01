@@ -10,7 +10,7 @@ interface AboutSectionProps {
 const AboutSection = ({ style, image, children }: AboutSectionProps) => {
   return (
     <div>
-        <div className={`flex flex-row items-center gap-6 ${style}`}>
+        <div className={`flex lg:flex-row flex-col items-center gap-6 ${style}`}>
           <div className="h-auto basis-1/4">
             <Image
               className="object-cover rounded-lg"

@@ -19,7 +19,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   return (
     <div className="border-b border-green/20">
       <button
-        className="flex w-full items-center justify-between py-4 px-6 text-left"
+        className="flex w-full items-center justify-between py-4 px-2 text-left"
         onClick={onToggle}
       >
         <span className="text-lg text-green font-semibold">{title}</span>

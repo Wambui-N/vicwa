@@ -34,7 +34,7 @@ const About = () => {
           }
         />
         <AboutSection
-          style="flex-row-reverse"
+          style="lg:flex-row-reverse flex-row"
           image="/About 2.jpeg"
           children={
             <>

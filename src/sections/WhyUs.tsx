@@ -30,13 +30,13 @@ const whyUsPoints = [
 
 export const WhyUs = () => {
   return (
-    <div className="responsive">
+    <div className="responsive py-8">
       <SectionTitle title="Why Choose Us?" />
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
         {whyUsPoints.map((points, index) => (
           <WhyUsPoint
             key={index}
-            style={index % 2 === 0 ? "flex-col" : "flex col sm:flex-col-reverse"}
+            style={index % 2 === 0 ? "flex-col" : "flex-col sm:flex-col-reverse"}
             image={points.image}
             title={points.title}
             description={points.description}

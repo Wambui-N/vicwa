@@ -40,7 +40,7 @@ const Approach = () => {
           understand your unique requirements and tailor solutions accordingly.
           Our approach combines:
         </p>
-        <div className="grid grid-rows-2 grid-cols-2 gap-x-12 gap-y-12 py-6">
+        <div className="grid lg:grid-rows-2 grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-12 py-6">
           {approachData.map((approach) => (
             <ApproachItem
               key={approach.id}

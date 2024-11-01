@@ -8,10 +8,10 @@
     @apply bg-white text-green font-satoshi overflow-x-hidden;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-black text-4xl uppercase leading-tight;
+    @apply font-black lg:text-4xl text-2xl uppercase leading-tight;
   }
   h2{
-    @apply text-3xl font-bold;
+    @apply lg:text-3xl text-xl font-bold;
   }
   h6{
     @apply text-lg font-bold;
@@ -24,7 +24,7 @@
     @apply max-w-screen-xl mx-auto lg:px-40 md:px-20 px-4;
   }
   .section-padding{
-    @apply px-24 py-6;
+    @apply lg:px-24 px-4 py-6;
   }
 }
 
