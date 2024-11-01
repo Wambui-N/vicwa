@@ -3,7 +3,6 @@
 import Image from "next/image";
 import React, { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import Lenis from 'lenis'
 
 const services = [
   {
@@ -47,18 +46,6 @@ const services = [
 const Services = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const imageContainerRef = useRef(null);
-
-  // Initialize Lenis
-const lenis = new Lenis();
-
-// Use requestAnimationFrame to continuously update the scroll
-function raf(time: number) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
-
 
   const serviceRefs = useRef(
     services.map(() => React.createRef<HTMLDivElement>())
